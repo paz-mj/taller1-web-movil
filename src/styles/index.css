@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+/* Base + tema Ghibli */
+@layer base {
+    :root{
+        --primary:#4aa3df; /* celeste Ghibli */
+        --muted:#e5e7eb;   /* gris claro para contenedores/footer */
+        --ink:#374151;     /* gris oscuro para texto */
+    }
+
+    html,body{height:100%;}
+    body{
+        color:var(--ink);
+        font-family:"Titan One", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+    }
+    ::selection{
+        background: color-mix(in oklab, var(--primary) 32%, white);
+        color:#111;
+    }
+}
+
+/* Utilidades ligeras para UI */
+.btn-primary{
+    @apply inline-flex items-center justify-center rounded-2xl px-5 py-3 text-base shadow hover:shadow-md transition border;
+    background: var(--primary);
+    color:white;
+    border-color: color-mix(in oklab, var(--primary) 80%, black);
+}
+
+.card{
+    @apply rounded-3xl p-6 border;
+    background: white;
+    border-color: var(--muted);
+    box-shadow: 0 8px 24px rgba(0,0,0,.06);
+}
+.img-centered {
+    @apply mx-auto block object-contain;
+}
